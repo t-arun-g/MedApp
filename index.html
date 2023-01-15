@@ -10,6 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href=
     "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
         <link rel="stylesheet" href=
@@ -51,10 +52,13 @@
     </div>
       </nav>
 
-      
-      <div class="container text-left">
-        <div class="row">
-          <div class="col-sm-4" style="margin-left: -20px;">
+<div class="row">
+
+
+  
+     
+  
+     <!--form-->     <div class="col-sm-3" style="margin-left:154px ;">
            <div style="font-size: 37px;color: rgb(13, 13, 109);font-family:'Droid Sans';font-weight: 900;text-shadow: 1px 0 #000000; margin-top: 15px;">Hi, Welcome Back!</div>
            <p class="lead" style="font-size: 13px;color: #4F4F4F;opacity: 80%;">Start a 14-day full-featured trial. No credit card required.</p>
 
@@ -68,13 +72,28 @@
               <input type="Designation" class="form-control" id="Designation" placeholder="@ Sr. UI/UX Designer">
             </div>
             <div class="mb-3"style="font-family: 'Droid Sans'; color: rgb(13, 13, 109);font-weight:600;">
-                <label for="password" class="form-label">Password</label>
-               <input type="password" class="form-control" id="password" name="password"/>
+              <label for="password" class="form-label">Password</label>
+              
+              <input type="password" name="password" 
+              class="form-control"
+              id="id_password">
+
+         <img src='eyelash.png'
+              style="top: -32px;width:5%;position: relative;left: 315px;cursor: pointer;" 
+              id="togglePassword">
               </div>
-              <div class="mb-3"style="font-family: 'Droid Sans'; color: rgb(13, 13, 109);font-weight:600;">
-                <label for="Confirm password" class="form-label">Confirm password</label>
-                <input type="password" class="form-control" id="Confirm password">
-              </div>
+
+
+            <div class="mb-3"style="font-family: 'Droid Sans'; color: rgb(13, 13, 109);font-weight:600;">
+              <label for="Confirm password" class="form-label">Confirm password</label>
+              <input type="password" name="password" 
+              class="form-control"
+              id="id_password">
+
+         <img src='eyelash.png'
+              style="top: -32px;width:5%;position: relative;left: 315px;" 
+              id="togglePassword">
+            </div>
               <br>
               <div style="display: flex;">
              <div style="margin-top: 5px; margin-right: 5px;"><label class="toggle">
@@ -95,39 +114,84 @@
         <button class="btn btn-outline-secondary container-fluid" style="margin-left: 10px;width:95% ;"><img src="google.svg" style=" margin-right: 5px;height:30px;"></img>Sign in with Google</button>
               <br><br>
            
-          </form>
+          </form></div><!--form-->
 
-          </div>
+         <!--image scroll--> <div class="col-6 container-fluid" style="margin-top: 76px;margin-bottom: 266px;position: relative;">
+            <div id="myslideshow" class="carousel slide " data-ride="carousel" data-interval="100">
+              <div class="carousel-indicators" style="display:flex;bottom: 10px">
+                <button type="button" style="height: 5px;width: 5px;border-radius: 50%;padding: 9px;" data-bs-target="#myslideshow" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button " style="height: 5px;width: 5px;border-radius: 50%;padding: 9px;align-self: center;" data-bs-target="#myslideshow" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" style="height: 5px;width: 5px;border-radius: 50%;padding: 9px;"data-bs-target="#myslideshow" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner" style="height:582px;width:746px;position: relative;border-radius: 51px;background-color: #292D32;">
+                <div class="carousel-item active">
+                  <img src="im1.jpg" class="d-block w-100" style="width: 100%;"alt="" >
+                </div>
+                <div class="carousel-item" >
+                  <img src="im23.jpg" class="d-block w-100" style="width: 100%;"alt="" >
+                </div>
+                <div class="carousel-item" >
+                  <img src="im33.jpg" class="d-block w-100" style="width: 100%;"alt="" >
+                </div>
+              </div>
+            </div>
+          </div> <!--image scroll-->
         
-      </div>
-
       
+      </div>
 
 </body>
 
 
+<script>
+  const togglePassword = 
+  document.querySelector('#togglePassword');
+    
+const password = document.querySelector('#id_password');
 
-<script src="node_modules/bootstrap/dist/js/bootstrap.js">
-const togglePassword = document
-            .querySelector('#togglePassword');
-  
-        const password = document.querySelector('#password');
-  
-        togglePassword.addEventListener('click', () => {
-  
-            // Toggle the type attribute using
-            // getAttribure() method
-            const type = password
-                .getAttribute('type') === 'password' ?
-                'text' : 'password';
-                  
-            password.setAttribute('type', type);
-  
-            // Toggle the eye and bi-eye icon
-            this.classList.toggle('bi-eye');
-        });
+togglePassword.addEventListener('click', function (e) {
+
+  // Toggle the type attribute
+  const type = password.getAttribute(
+      'type') === 'password' ? 'text' : 'password';
+  password.setAttribute('type', type);
+
+  // Toggle the eye slash icon
+  if (togglePassword.src.match(
+"eyelash.png")) {
+      togglePassword.src =
+"eye.png";
+  } else {
+      togglePassword.src =
+"eyelash.png";
+       }
+    });
+</script>
+<script>
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("carousel-item");
+  let dots = document.getElementsByClassName("btn");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 1000); // Change image every 2 seconds
+ 
+}
 
 </script>
+
     
 </body>
 </html>
