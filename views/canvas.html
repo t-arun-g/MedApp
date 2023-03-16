@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-Page</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+
+    <link rel="stylesheet" href=
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity=
+    "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+
+            <script src="/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js" ></script>
+<script src="/phantomjs/lib/phantomjs.js"></script>
+</head>
+<body style="background-color: rgba(217, 251, 254, 0.283);">
+
+<br>
+
+    <!-- <canvas id="canvas"></canvas> -->
+
+        <div class="container-fluid row" id="DATA">
+
+        <div class="conatiner row">
+        <div class="col-6 col-md-3 me-auto text-center offset-md-1 row align-content-center ps-5" id="doc_name" style="font-size: xx-large;font-weight: bold;">
+           <img src="/images/apollo.png" alt="#" style="width:70%;">
+        </div>
+        <div class="ms-auto col-12 col-md-5 pb-4 pt-3 ps-md-0 ps-2" style="font-size:larger;font-weight:bold;">
+            <div class="row">
+            <div  class="col-3 text-center ps-0 ms-0" style="text-decoration: underline;">Patient's Name</div>
+            <div class="col-12 col-md-5 ps-0 ms-0" id="dname">
+            <canvas id="Cname"  style="border-bottom: dotted 3px black;" ></canvas>
+        </div>
+    </div>
+        <div class="row mt-3">
+            <div class="col-2 text-center ps-1 ms-0" style="text-decoration: underline;">UHID no.</div>
+            <div class="col-12 col-md-3 ps-0 ms-0" id="duhid">
+                <canvas id="Cuhid"  style="border-bottom: dotted 3px black;" ></canvas>
+            </div>
+            <div class="col-2 text-center ps-0 ms-0" style="text-decoration: underline;">Emg no.</div>
+            <div class="col-12 col-md-3 ps-0 ms-0" id="dno">
+                <canvas id="Cno"  style="border-bottom: dotted 3px black;" ></canvas>
+            </div>
+            
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-2 ps-0 ms-0 text-center" style="text-decoration: underline;">Age/Sex</div>
+            <div class="col-12 col-md-3 ps-0 ms-0" id="dsex">
+                <canvas id="Csex"  style="border-bottom: dotted 3px black;" ></canvas>
+            </div>
+            <div class="col-2 ps-2 ms-0 text-centre" style="text-decoration: underline;">Date</div>
+            <div class="col-12 col-md-3 ps-0 ms-0" id="ddate">
+                <canvas id="Cdate"  style="border-bottom: dotted 3px black;" ></canvas>
+            </div>
+            
+        </div>
+        </div>
+        </div>
+
+        <br>
+
+        <div class="col-12 text-center" style="font-size: xx-large;font-weight: bold;text-decoration: underline;"> ASSESSMENT OF EMERGENCY PATIENTS</div>
+            <br>    
+        <div class="row">
+        <div class="col-6 col-md-3 offset-md-1 pt-4" style="font-size: larger;font-weight: bold;">CHIEF COMPLAINT OF PATIENT : </div>
+                <div class="col-12 col-md-7" id="dcomplaint" style="border:solid 2px black;border-radius: 5px;">
+                    <canvas id="Ccomplaint"></canvas>
+                </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-6 col-md-3 offset-md-1 pt-2" style="font-size: larger;font-weight: bold;">KNOWN ALLERGIES: </div>
+                <div class="col-12 col-md-7" id="dallergy" style="border:solid 2px black;border-radius: 5px;">
+                    <canvas id="Callergy"></canvas>
+                </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12 offset-md-1 pt-2" style="font-size: larger;font-weight: bold;">PAST MEDICAL HISTORY: 
+            <div class="form-check form-check-inline ms-5 ps-5">
+                <label class="form-check-label" for="inlineCheckbox1">DM</label>
+                <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"></div>
+
+              <div class="form-check form-check-inline ms-2 ">
+                <label class="form-check-label" for="inlineCheckbox2">HTN</label>
+                <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox2" value="option2"> </div>
+
+                    <div class="form-check form-check-inline ms-2 ">
+                        <label class="form-check-label" for="inlineCheckbox1">COPD</label>
+                        <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"> </div>
+                    
+                        <div class="form-check form-check-inline ms-2 "><label class="form-check-label" for="inlineCheckbox1">TB</label>
+                            <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"> </div>
+
+                           
+                                <div class="form-check form-check-inline ms-2 "><label class="form-check-label" for="inlineCheckbox1">CRF</label>
+                                    <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"> </div>
+
+                                    <div class="form-check form-check-inline ms-2 "><label class="form-check-label" for="inlineCheckbox1">HYPERTHYROIDISM</label>
+                                        <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"> </div>
+                                        <div class="form-check form-check-inline ms-2 "><label class="form-check-label" for="inlineCheckbox1">CLD</label>
+                                            <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"> </div>
+                                            <div class="form-check form-check-inline ms-2 "><label class="form-check-label" for="inlineCheckbox1">CVA</label>
+                                                <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"> </div>
+</div>
+
+
+                <div class="col-12 offset-md-1 pt-3" style="font-size: larger;font-weight: bold;">GENERAL EXAMINATION: 
+                    <div class="form-check form-check-inline ms-5 ps-5">
+                        <label class="form-check-label" for="inlineCheckbox1">ICTERUS</label>
+                        <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"></div>
+
+                    <div class="form-check form-check-inline ms-2 ">
+                        <label class="form-check-label" for="inlineCheckbox2">PALLOR</label>
+                        <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox2" value="option2"> </div>
+
+                            <div class="form-check form-check-inline ms-2 ">
+                                <label class="form-check-label" for="inlineCheckbox1">CYANOSIS</label>
+                                <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"> </div>
+                            
+                                <div class="form-check form-check-inline ms-2 "><label class="form-check-label" for="inlineCheckbox1">L. NODES</label>
+                                    <input class="form-check-input ms-1" type="checkbox" id="inlineCheckbox1" value="option1"> </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-6 col-md-2 offset-md-1 pt-2" style="font-size: larger;font-weight: bold;">CLINICAL FINDINGS: </div>
+                    <div class="col-1 pt-2" style="font-size: larger;font-weight: bold;">CHEST : </div>
+                            <div class="col-12 col-md-4" id="dchest" style="border:solid 2px black;border-radius: 5px;">
+                               
+                                <canvas id="Cchest"></canvas>
+                            </div>
+                            <div class="col-1 pt-2" style="font-size: larger;font-weight: bold;">C.V.S : </div>
+                            <div class="col-12 col-md-3" id="dcvs" style="border:solid 2px black;border-radius: 5px;">
+                               
+                                <canvas id="Ccvs"></canvas>
+                            </div></div>
+
+
+                <div class="row mt-3">
+                    <div class="col-6 col-md-1 offset-md-3 pt-2" style="font-size: larger;font-weight: bold;">P/A: </div>
+                            <div class="col-12 col-md-4" id="dpa" style="border:solid 2px black;border-radius: 5px;">
+                                <canvas id="Cpa"></canvas>
+                            </div>
+                            <div class="col-1 pt-2" style="font-size: larger;font-weight: bold;">C.N.S : </div>
+                            <div class="col-12 col-md-3" id="dcns" style="border:solid 2px black;border-radius: 5px;">
+                               
+                                <canvas id="Ccns"></canvas>
+                            </div></div>
+
+                            <div class="row mt-3">
+                                <div class="col-6 col-md-1 offset-md-1 pt-2" style="font-size: larger;font-weight: bold;">Pulse: </div>
+                                        <div class="col-12 col-md-1" id="dpulse" style="border:solid 2px black;border-radius: 5px;">
+                                            <canvas id="Cpulse"></canvas>
+                                        </div>
+                                        <div class="col-6 col-md-1 offset-md-1 pt-2" style="font-size: larger;font-weight: bold;">BP: </div>
+                                        <div class="col-12 col-md-1" id="dbp" style="border:solid 2px black;border-radius: 5px;">
+                                            <canvas id="Cbp"></canvas>
+                                        </div>
+                                         <div class="col-6 col-md-1 offset-md-1 pt-2" style="font-size: larger;font-weight: bold;">Temp: </div>
+                                        <div class="col-12 col-md-1" id="dtemp" style="border:solid 2px black;border-radius: 5px;">
+                                            <canvas id="Ctemp"></canvas>
+                                        </div>
+                                        
+                                        <div class="col-6 col-md-1 offset-md-1 pt-2" style="font-size: larger;font-weight: bold;">R.R: </div>
+                                        <div class="col-12 col-md-1" id="drr" style="border:solid 2px black;border-radius: 5px;">
+                                            <canvas id="Crr"></canvas>
+                                        </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-6 col-md-3 offset-md-1 pt-2" style="font-size: larger;font-weight: bold;">PROVISIONAL DIAGNOSIS: </div>
+                                        <div class="col-12 col-md-7" id="dprod" style="border:solid 2px black;border-radius: 5px;">
+                                            <canvas id="Cprod"></canvas>
+                                        </div>
+                            </div>
+                            <div class="row mt-4 offset-md-1 " style="font-size: larger;font-weight: bold;;">
+                                <div class="col-12 col-md-5 me-5" >
+                                <div class="col-12">INVESTIGATIONS :</div>
+                                <div class="col-12" id="dinvest" style="border:solid 2px black;border-radius: 5px;">
+                                    <canvas id="Cinvest"></canvas>
+                                </div>
+                                </div>
+                                <div class="col-12 col-md-5 ms-3">
+                                    <div class="col-12">TREATMENT GIVEN :</div>
+                                <div class="col-12" id="dtreat" style="border:solid 2px black;border-radius: 5px;">
+                                    <canvas id="Ctreat"></canvas>
+                                </div>
+
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-6 col-md-2 offset-md-1 pt-2" style="font-size: larger;font-weight: bold;">SIGNATURE OF EMO </div>
+                                        <div class="col-12 col-md-2" id="dsign" style="border-bottom:solid 2px black;">
+                                            <canvas id="Csign"></canvas>
+                                        </div>
+                                        </div>
+                            
+
+               
+
+                
+
+
+
+        </div>
+        <span class="col-md-2 col-sm-4 ms-4 mt-4 mb-4 offset-md-2" style="font-family: 'Droid Sans';" >
+            <a  id="cake" href="">
+            <button class="btn" style=" font-size: 1.2rem; background-color: #DEEDEC;color:#0dc5c2;" data-bs-toggle="collapse" aria-controls="collapseExample2">Download</button></a>
+          </a>
+          </span>
+        <br><br>
+
+
+
+        
+
+<script language="JavaScript" type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+
+
+    <script src="/fabric/dist/fabric.min.js"></script>
+
+    <script>
+        
+        let block=[];
+        function canvas(id,i){
+            if(i==17 || i==18){
+                block[i] =new fabric.Canvas("C"+id,{
+                
+                height:"300"
+            })
+
+            }
+             else {block[i] =new fabric.Canvas("C"+id,{
+                
+                height:"45"
+            })}
+            let width=$("#d"+id).width();
+            block[i].setWidth(width);
+            block[i].freeDrawingBrush.width=2;
+            block[i].freeDrawingBrush.color="black";
+            block[i].isDrawingMode=true;
+            block[i].requestRenderAll();
+        
+        }
+        //creating the needed canvas by calling the function
+
+        canvas("name",0);
+        canvas("no",1);
+        canvas("uhid",2);
+        canvas("sex",3);
+        canvas("date",4);
+        canvas("allergy",5);
+        canvas("chest",6)
+        canvas("cvs",8)
+        canvas("pa",7)
+        canvas("cns",9)
+        canvas("pulse",10)
+        canvas("bp",11)
+        canvas("temp",12)
+        canvas("weight",13)
+        canvas("rr",15)
+        canvas("prod",16)
+        canvas("invest",17)
+        canvas("treat",18)
+        canvas("sign",19)
+
+
+
+       const pres= new fabric.Canvas("Cprescription",{
+            height:400
+        })
+
+        let width=$("#dprescription").width();
+            pres.setWidth(width);
+            pres.freeDrawingBrush.width=2;
+            pres.freeDrawingBrush.color="black";
+            pres.isDrawingMode=true;
+            
+            pres.requestRenderAll();
+
+
+            const compaint= new fabric.Canvas("Ccomplaint",{
+            height:90
+        })
+
+         width=$("#dcomplaint").width();
+            compaint.setWidth(width);
+            compaint.freeDrawingBrush.width=2;
+            compaint.freeDrawingBrush.color="black";
+            compaint.isDrawingMode=true;
+            compaint.requestRenderAll();
+
+</script>
+<script>
+            //download the image
+//             const canIRun = navigator.mediaDevices.getDisplayMedia 
+
+// const takeScreenShot = async () => {
+//   const stream = await navigator.mediaDevices.getDisplayMedia({
+//     video: { mediaSource: 'screen' },
+//   })
+//   // get correct video track
+//   const track = stream.getVideoTracks()[0]
+//   // init Image Capture and not Video stream
+//   const imageCapture = new ImageCapture(track)
+//   // take first frame only
+//   const bitmap = await imageCapture.grabFrame()
+//   // destory video track to prevent more recording / mem leak
+//   track.stop()
+
+//   const canvas = document.getElementById('DATA') 
+//   // this could be a document.createElement('canvas') if you want
+//   // draw weird image type to canvas so we can get a useful image
+//   canvas.width = bitmap.width
+//   canvas.height = bitmap.height
+//   const context = canvas.getContext('2d')
+//   context.drawImage(bitmap, 0, 0, bitmap.width, bitmap.height)
+//   const image = canvas.toDataURL()
+
+//   // this turns the base 64 string to a [File] object
+//   const res = await fetch(image)
+//   const buff = await res.arrayBuffer()
+//   // clone so we can rename, and put into array for easy proccessing
+//   const file = [
+//     new File([buff], `photo_${new Date()}.jpg`, {
+//       type: 'image/jpeg',
+//     }),
+//   ]
+//   return file
+// }     
+
+// const button = document.getElementById('cake').onclick = () =>{ 
+//     canvas=takeScreenShot();
+//     var a = document.createElement('a');
+//         // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
+//         a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
+//         a.download = 'somefilename.jpg';
+//         a.click();
+
+// }
+
+var page = require('webpage').create();
+page.viewportSize = { width: 1024, height: 768 };
+page.open('https://infoheap.com/', function () {
+  page.clipRect = {top:0, left:0, width:1024, height:1024};
+  page.render('site.png');
+  phantom.exit();
+});
+           
+
+
+
+
+    </script>
+
+
+</body>
+</html>

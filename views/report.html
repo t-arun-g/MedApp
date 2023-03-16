@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patients</title>
+    <link rel="stylesheet" href="/css/style_index.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href=
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity=
+    "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+            <script src="/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js" ></script>
+</head>
+<body style="background-color: rgba(217, 251, 254, 0.283);">
+    
+  <nav class="navbar navbar-expand-md" >
+    <div class="container-fluid">
+        
+      <a class="navbar-brand " style="font-family:'Inter'">
+        <span class="mt-3 ml-5" style="font-size: 3rem;color: #18CDCA;float: left;font-weight: 600;" >Med</span>
+        <span class="mt-3 " style="font-size: 3rem;color: #4F4F4F ;float: left;font-weight: 600;">Repo</span>
+        </a>
+
+
+        <button class="navbar-toggler me-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class=" collapse navbar-collapse" id="navbarTogglerDemo02" style=" float: right;font-size:larger ;font-weight:bold ;font-family: 'Inter';">
+          <ul class="navbar-nav " style="margin-left: 4.5rem;" >
+            <li class="nav-item mt-3 ms-md-4 background-better" style="margin-top: 3rem;">
+              <a class="nav-link mt-1  ms-1" href="#" style="color:#ffffff;">
+                <span  class="fa fa-people-group ml-3 mt-1" style="color: #ffffff; width:1.78625 rem;float: left;;">
+                    <span class="mt-3 ml-4" style="font-family:'Inter'; color: rgb(255, 255, 255);font-weight: 100;">Patients</span>
+                </a>
+            </li>
+            <li class="nav-item background-nice ms-md-4 mt-3 " style=" margin-top: 2.8rem;">
+                <a class="nav-link" href="../views/appointments.html" style="color:#828282;" id="appointments">
+                    <span  class="fa fa-heart-circle-plus ml-3 mt-2" style="color: #6b6b6b; width:1.78625 rem;float: left">
+                    <span class="mt-3 ml-4" style="font-family:'Inter'; color: #6b6b6b;font-weight: 100; ">Appointments</span>
+        
+                  
+                </a>
+            </li>
+            <li class="nav-item background-nice ms-md-4 mt-3 " style=" margin-top: 2.8rem;">
+                <a class="nav-link " href="#" style="color:#828282;">
+                    <span  class="fa fa-plus ml-3 mt-1" style="color: #6b6b6b; width:1.78625 rem;float: left;">
+                        <span class="mt-3 ml-4" style="font-family:'Inter'; color: #6b6b6b;font-weight: 100;">Emergencies</span>
+            
+                  
+                </a>
+            </li>
+          </ul>
+
+            <div class="nav-item fresh mt-3 circle" style="align-items: end; margin-left:7rem;float: right; ">
+                <a class="nav-link" href="#" style="color:#828282;">
+                    <!--<img src="/images/R.png" class="ml-1 mt-2 " >-->
+                    <span class="fa fa-bell mt-2 ml-2 fa-2x" style=" color: #0a5755;"></span>
+                </a>
+              </div>
+
+              
+            <div class="nav-item circle mt-3 fresh" style="margin-left:2rem;float: right; background-color:#18CDCA;">
+                
+            <a class="nav-link " role="button" data-bs-toggle="offcanvas" href="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="fa fa-user fa-2x  mt-2" style=" margin-left: 0.9rem; color: #0a5755;"></span>
+            </a>
+
+            <!--sidebar-->
+                    
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Collapse Menu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <div >
+                </div>
+
+              </div>
+            </div>
+
+
+        <!--sidebar close-->
+
+            </div>
+         </div>
+    </div>
+</nav>
+<!--navbar over-->
+
+<div class="row mt-5 me-3 ms-3 mb-3">
+  <div class="row-cols-12 col-md-3">
+    <div class="prettycard1 ml-4 ">
+      <span class="mt-5" style="position: absolute; color: #0B5B5A;font-size:x-large;font-weight: 500;margin-top:  4.34rem;">Add New</span>
+      <span style="position:absolute; margin-top: 5rem; color: #0B5B5A;font-size:x-large;font-weight: 500;">Patients</span>
+      <a href="#">
+          <span id="boot-icon" class="bi bi-plus-circle " style="margin-top:5rem;float:right;font-size: 59px;opacity: 1; border: hidden; color: #0B5B5A;"></span></a>
+  </div>
+  </div>
+
+  <div class="row-cols-12 col-md-8 ms-4"  >
+    <div class=" moreprettycard mb-3 justify-content-center" >
+      <div class="row">
+      <div class="col-md-2 col-sm-2 ms-5 mt-4 mb-4">
+        <img src="/images/OIP.jpeg" style="height: 8rem;width: 6rem;border-radius: 5px;" alt="">
+      </div>
+      
+
+      <div class="col-md-2 col-sm-3 mt-4 mb-4">
+
+        <p style="color: #888888;margin-top: 1rem; margin-bottom: -0.1rem;">
+          Patient Name: 
+        </p>
+        <p style="color: #888888;margin-bottom: -0.1rem;">
+          Blood Group: 
+        </p>
+        <p style="color: #888888;margin-bottom: -0.1rem;">
+          Age: 
+        </p>
+        <p style="color: #888888;margin-bottom: -0.1rem;">
+          Sex:
+        </p>
+        <p>
+
+        </p>
+      </div>
+      <div class="col-md-2 col-sm-3 mt-4 mb-4">
+
+       <p style="color:#00413f;margin-top: 1rem; margin-bottom: -0.1rem;" id="name">
+          Emille Noir
+        </p>
+        <p style="color:#00413f;margin-bottom: -0.1rem;" id="blood">
+          A+
+        </p>
+        <p style="color:#00413f;margin-bottom: -0.1rem;" id="age">
+          20
+        </p>
+        <p style="color:#00413f;margin-bottom: -0.1rem;" id="sex">
+          Male
+        </p>
+      </div>
+
+      <div class="col-md-2 col-sm-3 mt-4 mb-4">
+
+        <p style="color: #888888;margin-top: 1rem; margin-bottom: -0.1rem;">
+          Aadhar Card No.: 
+        </p>
+        <p style="color: #888888;margin-bottom: -0.1rem;">
+          Sugar level: 
+        </p>
+        <p style="color: #888888;margin-bottom: -0.1rem;">
+          Oxygen level: 
+        </p>
+        <p style="color: #888888;margin-bottom: -0.1rem;">
+          Contact number:
+        </p>
+        <p>
+
+        </p>
+      </div>
+      <div class="col-md-2 col-sm-3 mt-4 mb-4">
+
+        <p style="color:#00413f;margin-top: 1rem; margin-bottom: -0.1rem;">
+          4562-5463-4587
+        </p>
+        <p style="color:#00413f;margin-bottom: -0.1rem;">
+          25
+        </p>
+        <p style="color:#00413f;margin-bottom: -0.1rem;">
+          99
+        </p>
+        <p style="color:#00413f;margin-bottom: -0.1rem;">
+          98755 64486
+        </p>
+      </div>
+
+    </div>
+    </div>
+  </div>
+
+
+ 
+</div>
+
+
+<div class="row container-fluid">
+    <div class="ml-sm-4 ml-5 col-md-4 col-sm-8 mt-4">
+
+        <div class="" style="font-family: 'Droid Sans'; color: rgb(13, 13, 109);font-weight:600;">
+            <div class="col-10" style="font-size: 1.2rem;">
+            <input type="search" class="fa fa-search form-control" style="font-family: 'Inter'; height: 3rem;" id="Name" aria-describedby="name" placeholder="Search by Doctor Name or Hospital">
+        </div>
+            <div class="col-2 " style="float: right; margin-top: -3rem;">
+                <button type="submit" class="btn " style="font-size: 1.2rem;height: 3rem;width: 8rem; background-color: #027874;color: white;">Search</button>
+              </div>
+          </div>
+
+
+    </div>
+
+    <div class="ml-5 col-md-4 col-sm-8 mt-4 mb-3">
+
+        <div class="col-3 ms-3" style="opacity: 50%; margin-top: 0.75rem;">
+            <label for="exampleDataList" class="form-label">Sort by:</label>
+            </div>
+
+            <div class="col-6 " style="opacity: 50%; margin-left: 6rem; margin-top: -2.5rem;">
+              <select style="height: 2.5rem; width: 11rem;border-radius: 7px;border-width: 0.2rem;">
+                <option value="" disabled selected style="font-weight: 0.2rem;">Select</option> 
+                <option>Pending</option>
+                <option>Active Patients</option>
+                <option>Completed</option>
+                <option>Due date</option>
+              </select>
+                
+
+                </div>
+          
+    </div>
+</div>
+
+<ul class="nav-tabs nav mt-4 mb-3 ml-5" style="border-bottom: none;">
+    <li class="nav-item" >
+        <a class="nav-link active" aria-current="page" href="#" style="border-bottom: solid #18CDCA; font-weight: 500; border-left: none; border-top: none;border-right: none; color: #0B5B5A; font-size: larger;background-color: rgba(217, 251, 254, 0.283);">Active Patients</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="completed_p.html" style="font-weight: 500; color: #5b5b5b;font-size: larger;">Completed</a>
+      </li>
+</ul>
+
+<div class="row container-fluid">
+  <span class="viewdisable mt-3 col-md-1 col-sm-1 " style=" margin-left: 4rem; color: #a2a2a2; font-size:larger; font-weight: 600; font-family: 'Inter';">
+    Date
+</span>
+    <span class=" mt-3 col-md-2 col-sm-2" style=" margin-left: 3.5rem; color: #a2a2a2; font-size:larger; font-weight: 600; font-family: 'Inter';">
+        Doctor Name
+    </span>
+    <span class=" mt-3 col-md-2 col-sm-2" style=" margin-left: 3.5rem; color: #a2a2a2; font-size:larger; font-weight: 600; font-family: 'Inter';">
+        Contact No.
+    </span>
+    <span class=" mt-3 col-md-2 col-sm-3" style=" margin-left: 3.5rem; color: #a2a2a2; font-size:larger; font-weight: 600; font-family: 'Inter';">
+        Hospital
+    </span>
+    <span class="mt-3 col-md-2 col-sm-4 viewdisable" style="margin-left:-2.8rem ;  color: #a2a2a2; font-size:larger; font-weight: 600; font-family: 'Inter';">
+      Diseases
+    </span>
+    
+</div>
+<!--card starts-->
+<div class="card-13 row ms-5 mt-4 me-5 mb-4" style="background-color: #028a8513;visibility: hidden;" id="doctor">
+  
+    <span class=" col-md-1 col-sm-2 mb-3 " style="margin-top: 3.9rem;  color: #000000; font-size:medium; font-family: 'Inter';">
+        11/3/2022
+    </span>
+    <img src="/images/kk.jpeg" alt="" class="ms-5 circle" style="margin-top: 3rem; width:75px;height: 50px;">
+    <span class=" col-md-2 col-sm-2 mb-3" style="margin-top: 3.5rem;font-weight: 600;   color: #000000; font-size:large; font-family: 'Inter';" id="doctor_name">
+        Dr. Ankit Patel 
+        <span class="mb-5"  style="font-size: medium;color:#5b5b5b;">
+            cardiologist
+        </span>
+    </span>
+    <span class=" col-md-2 col-sm-3 mb-3" style="margin-top: 3.9rem;   margin-left: 1.75rem; color: #000000; font-size:medium; font-family: 'Inter';" id="doctor_number">
+        96554 78555
+    </span>
+
+    <span class=" col-md-2 col-sm-2 ms-4 mb-3" style="margin-top: 3.5rem;font-weight: 600;   color: #000000; font-size:large; font-family: 'Inter';" id="hospital">
+      Fortune Hospital
+        <span class=" mb-5"  style="font-size: medium;color:#5b5b5b;display:block;">
+            Kanpur, UP
+        </span>
+    </span>
+
+    <span class="col-md-1 col-sm-2 mt-4 mb-4 " style="align-items: center;">
+        <span class="badge rounded-pill mb-2" style="background-color: #ff000042;font-weight: 500; align-items: center; opacity: 60%;font-size: medium;color: #e30000;" id="sym_1" >Sugar</span>
+        <span class="badge rounded-pill mb-2" style="background-color: #ff000042;font-weight: 500;align-items: center;opacity: 60%;font-size: medium;color: #e30000;" id="sym_2" >Headache</span>
+        <span class="badge rounded-pill mb-2" style="background-color: #ff000042;font-weight: 500;align-items: center;opacity: 60%;font-size: medium;color: #e30000;" id="sym_3" >BP Low</span>
+    </span>
+
+    <span class="col-md-2 col-sm-3 ms-4  mb-4" style="margin-top: 3.5rem; font-family: 'Droid Sans';" >
+      <button class="btn" style=" font-size: 1.2rem; background-color: #DEEDEC;color:#0B5B5A;" data-bs-toggle="collapse" href="#collapseExample" aria-controls="collapseExample">View Prescription</button></a>
+  </span>
+  
+  </div>
+
+  <script language="JavaScript" type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+
+
+  <script>
+  
+  $(document).ready(function() {
+    
+    var url = $(location).attr('href'),
+      parts = url.split("/"),
+      doctorid = parts[parts.length-3];
+      patientid=parts[parts.length-1];
+      $.get('/doctors/'+doctorid+'/reports/'+patientid+'/getdata')
+              .done(function(response){
+                $("#name").text(response.Name);
+                $("#age").text(response.Age);
+                $("#sex").text(response.Sex);
+                $("#appointments").attr("href","/doctors/"+doctorid+"/appointments")
+                let number=response.many;
+                let i=0,j=0;
+                for(i=0;i<number;i++){
+                  var elem = document.querySelector('#doctor');
+                  var clone = elem.cloneNode(true);
+                  clone.id = 'doctor'+i;
+                  clone.style.visibility="visible";
+                  elem.before(clone);
+                  $("#doctor"+i).find('#doctor_name').text(response.docnames[i])
+                  $("#doctor"+i).find("#doctor_number").text(response.docnumbers[i]);
+                  $("#doctor"+i).find("#sym_1").text(response.Symptoms[i][0]);
+                  $("#doctor"+i).find("#sym_2").text(response.Symptoms[i][1]);
+                  $("#doctor"+i).find("#sym_3").text(response.Symptoms[i][2]);
+                }
+                
+              })
+              .fail(function(jqXHR, textStatus, errorThrown) {
+                alert(errorThrown)});
+  
+  
+  
+  
+       });
+  
+  
+  
+  </script>
+  
+  
+  </body>
+  </html>
