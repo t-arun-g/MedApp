@@ -6,7 +6,8 @@ const bodyParser = require("body-parser");
 const assert=require('assert');
 const mongodb=require('mongodb');
 const jsdom=require('jsdom')
-
+const { Builder } = require("selenium-webdriver");
+require("chromedriver");
 
 //jquery
 const dom=new jsdom.JSDOM("")
@@ -28,10 +29,9 @@ router.use(express.static(path.join(__dirname,'../public')));
 router.use(express.static(path.join(__dirname,'../node_modules')));
 
 
-router.get('/',(req,res,next)=>{
+router.get('/:patient_name',(req,res,next)=>{
     console.log(req.params.doctor_id)
     res.sendFile(path.join(__dirname,'../views/canvas.html'))
-    
 })
 
 

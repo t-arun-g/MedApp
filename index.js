@@ -13,7 +13,7 @@ const doctorpage=require("./routes/doctor_user.js")
 const appointment=require("./routes/appointments.js")
 const report_patient=require("./routes/reports.js")
 const canvas=require("./routes/canvas.js")
-
+const add_new=require("./routes/add_patients")
 //connect to mongoose
 const url= 'mongodb://127.0.0.1:27017/profile_2_db';
 const connection = mongoose.connect(url);
@@ -29,6 +29,7 @@ app.use('/login',LoginPage);
 app.use('/doctors/:doctor_id/reports',report_patient);
 app.use('/doctors/:doctor_id/appointments',appointment);
 app.use('/doctors/:doctor_id/canvas',canvas);
+app.use('/doctors/:doctor_id/add_patients',add_new);
 
 app.get('/login/doctor/:doc_id/',(req,res,next)=>{
     let doc_id=req.params.doc_id;

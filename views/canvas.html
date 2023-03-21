@@ -26,6 +26,7 @@
             <script src="/@popperjs/core/dist/umd/popper.min.js"></script>
 <script src="/bootstrap/dist/js/bootstrap.min.js" ></script>
 <script src="/phantomjs/lib/phantomjs.js"></script>
+<script src="/html2canvas/dist/html2canvas.js"></script>
 </head>
 <body style="background-color: rgba(217, 251, 254, 0.283);">
 
@@ -33,7 +34,7 @@
 
     <!-- <canvas id="canvas"></canvas> -->
 
-        <div class="container-fluid row" id="DATA">
+        <div class="container-fluid row capture" id="DATA">
 
         <div class="conatiner row">
         <div class="col-6 col-md-3 me-auto text-center offset-md-1 row align-content-center ps-5" id="doc_name" style="font-size: xx-large;font-weight: bold;">
@@ -41,10 +42,8 @@
         </div>
         <div class="ms-auto col-12 col-md-5 pb-4 pt-3 ps-md-0 ps-2" style="font-size:larger;font-weight:bold;">
             <div class="row">
-            <div  class="col-3 text-center ps-0 ms-0" style="text-decoration: underline;">Patient's Name</div>
-            <div class="col-12 col-md-5 ps-0 ms-0" id="dname">
-            <canvas id="Cname"  style="border-bottom: dotted 3px black;" ></canvas>
-        </div>
+            <div  class="col-3 text-center ps-0 ms-0" style="text-decoration: underline;">Patient's Name:</div>
+                <div class="col-4 text-center ps-3 ms-0" id="names" style="text-decoration: underline;"></div>
     </div>
         <div class="row mt-3">
             <div class="col-2 text-center ps-1 ms-0" style="text-decoration: underline;">UHID no.</div>
@@ -218,13 +217,12 @@
 
         </div>
         <span class="col-md-2 col-sm-4 ms-4 mt-4 mb-4 offset-md-2" style="font-family: 'Droid Sans';" >
-            <a  id="cake" href="">
-            <button class="btn" style=" font-size: 1.2rem; background-color: #DEEDEC;color:#0dc5c2;" data-bs-toggle="collapse" aria-controls="collapseExample2">Download</button></a>
-          </a>
+            
+            <button id="download" class="btn" style=" font-size: 1.2rem; background-color: #DEEDEC;color:#0dc5c2;" data-bs-toggle="collapse" aria-controls="collapseExample2">Download</button></a>
+          
           </span>
         <br><br>
-
-
+        <img id = "imgCapture" alt = "" style = "display:none;border:1px solid #ccc" />
 
         
 
@@ -232,9 +230,22 @@
 
 
     <script src="/fabric/dist/fabric.min.js"></script>
+    <script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+
+  </script>
+
+
+
+
 
     <script>
         
+
+
+
         let block=[];
         function canvas(id,i){
             if(i==17 || i==18){
@@ -258,7 +269,7 @@
         }
         //creating the needed canvas by calling the function
 
-        canvas("name",0);
+        block[0]=null;
         canvas("no",1);
         canvas("uhid",2);
         canvas("sex",3);
@@ -304,68 +315,31 @@
             compaint.isDrawingMode=true;
             compaint.requestRenderAll();
 
-</script>
-<script>
+
+            
+        var url = $(location).attr('href');
+        parts = url.split("/"),
+        patient_name= parts[parts.length-1];
+        patient_name=patient_name.replace("%20"," ");
+        $("#names").text(patient_name)
             //download the image
-//             const canIRun = navigator.mediaDevices.getDisplayMedia 
+             $("#download").on("click",function(){
+                
+                
+                const elementToSave = document.querySelector(".capture");
+                html2canvas(elementToSave).then(function(canvas) {
+                    const a = document.createElement("a");
+                    a.href = canvas.toDataURL("image/jpeg");
 
-// const takeScreenShot = async () => {
-//   const stream = await navigator.mediaDevices.getDisplayMedia({
-//     video: { mediaSource: 'screen' },
-//   })
-//   // get correct video track
-//   const track = stream.getVideoTracks()[0]
-//   // init Image Capture and not Video stream
-//   const imageCapture = new ImageCapture(track)
-//   // take first frame only
-//   const bitmap = await imageCapture.grabFrame()
-//   // destory video track to prevent more recording / mem leak
-//   track.stop()
+                    a.download = "image.jpeg";
+                    a.click();
+                    alert("downloaded")
+         });
 
-//   const canvas = document.getElementById('DATA') 
-//   // this could be a document.createElement('canvas') if you want
-//   // draw weird image type to canvas so we can get a useful image
-//   canvas.width = bitmap.width
-//   canvas.height = bitmap.height
-//   const context = canvas.getContext('2d')
-//   context.drawImage(bitmap, 0, 0, bitmap.width, bitmap.height)
-//   const image = canvas.toDataURL()
+                
+        });
 
-//   // this turns the base 64 string to a [File] object
-//   const res = await fetch(image)
-//   const buff = await res.arrayBuffer()
-//   // clone so we can rename, and put into array for easy proccessing
-//   const file = [
-//     new File([buff], `photo_${new Date()}.jpg`, {
-//       type: 'image/jpeg',
-//     }),
-//   ]
-//   return file
-// }     
-
-// const button = document.getElementById('cake').onclick = () =>{ 
-//     canvas=takeScreenShot();
-//     var a = document.createElement('a');
-//         // toDataURL defaults to png, so we need to request a jpeg, then convert for file download.
-//         a.href = canvas.toDataURL("image/jpeg").replace("image/jpeg", "image/octet-stream");
-//         a.download = 'somefilename.jpg';
-//         a.click();
-
-// }
-
-var page = require('webpage').create();
-page.viewportSize = { width: 1024, height: 768 };
-page.open('https://infoheap.com/', function () {
-  page.clipRect = {top:0, left:0, width:1024, height:1024};
-  page.render('site.png');
-  phantom.exit();
-});
-           
-
-
-
-
-    </script>
+</script>
 
 
 </body>

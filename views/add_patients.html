@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Patients</title>
+    <link rel="stylesheet" href="/css/style_index.css">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans" />
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" >
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href=
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
+    <link rel="stylesheet" href=
+    "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity=
+    "sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+            <script src="/@popperjs/core/dist/umd/popper.min.js"></script>
+<script src="/bootstrap/dist/js/bootstrap.min.js" ></script>
+</head>
+<body style="background-color: rgba(217, 251, 254, 0.283);">
+    <nav class="navbar navbar-expand-md" >
+        <div class="container-fluid">
+            
+          <a class="navbar-brand " style="font-family:'Inter'">
+            <span class="mt-3 ml-5" style="font-size: 3rem;color: #18CDCA;float: left;font-weight: 600;" >Med</span>
+            <span class="mt-3 " style="font-size: 3rem;color: #4F4F4F ;float: left;font-weight: 600;">Repo</span>
+            </a>
+
+
+            <button class="navbar-toggler me-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+
+            <div class=" collapse navbar-collapse" id="navbarTogglerDemo02" style=" float: right;font-size:larger ;font-weight:bold ;font-family: 'Inter';">
+              <ul class="navbar-nav " style="margin-left: 4.5rem;" >
+                <li class="nav-item mt-3 ms-md-4 background-better" style="margin-top: 3rem;">
+                  <a class="nav-link mt-1  ms-1" href="patients" style="color:#ffffff;">
+                    <span  class="fa fa-people-group ml-3 mt-1" style="color: #ffffff; width:1.78625 rem;float: left;;">
+                        <span class="mt-3 ml-4" style="font-family:'Inter'; color: rgb(255, 255, 255);font-weight: 100;">Patients</span>
+                    </a>
+                </li>
+                <li class="nav-item background-nice ms-md-4 mt-3 " style=" margin-top: 2.8rem;">
+                    <a class="nav-link" href="appointments" style="color:#828282;" id="appointments">
+                        <span  class="fa fa-heart-appointmentscircle-plus ml-3 mt-2" style="color: #6b6b6b; width:1.78625 rem;float: left">
+                        <span class="mt-3 ml-4" style="font-family:'Inter'; color: #6b6b6b;font-weight: 100; ">Appointments</span>
+            
+                      
+                    </a>
+                </li>
+                <li class="nav-item background-nice ms-md-4 mt-3 " style=" margin-top: 2.8rem;">
+                    <a class="nav-link " href="#" style="color:#828282;">
+                        <span  class="fa fa-plus ml-3 mt-1" style="color: #6b6b6b; width:1.78625 rem;float: left;">
+                            <span class="mt-3 ml-4" style="font-family:'Inter'; color: #6b6b6b;font-weight: 100;">Emergencies</span>
+                
+                      
+                    </a>
+                </li>
+              </ul>
+
+              <div class="nav-item fresh mt-3 circle" style="align-items: end; margin-left:7rem;float: right; ">
+                <a class="nav-link" href="#" style="color:#828282;">
+                    <!--<img src="/images/R.png" class="ml-1 mt-2 " >-->
+                    <i class="fa fa-bell mt-2 ml-2 fa-2x" style=" color: #0a5755;"></i>
+                </a>
+              </div>
+
+              
+            <div class="fresh-menu-btn circle mt-3 " style="margin-left:2rem;float: right; background-color:#18CDCA;">
+              <i class="menu-btn fa fa-user fa-2x  mt-2" style=" margin-left: 0.9rem; color: #0a5755;"></i>
+            </div>
+
+             </div>
+        </div>
+    </nav>
+<!--navbar over-->
+
+
+<div class="col-2 mt-4 text-center" style="margin-left: 45%;">
+    <input type="file" id="fileInput" onchange="convertToBase64()" accept="image/*" ></input>
+  
+  </div>
+
+
+
+
+    <!-- <input type="file" id="fileInput" onchange="convertToBase64()" accept="image/*"> -->
+    <img id="preview">
+    <div class="text-center">
+    <button id="testbtn" class="col-2 btn text-center justify-content-center" style="background-color:#0a5755;font-weight: bold;color: white;">Click</button>
+  </div>
+    <script>
+      var base_image = "";
+      const buttonELem = document.getElementById("testbtn");
+      function convertToBase64() {
+        var fileInput = document.getElementById("fileInput");
+        var preview = document.getElementById("preview");
+        var file = fileInput.files[0];
+        var reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = function () {
+          preview.src = reader.result;
+          var base64 = reader.result.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
+          // console.log(base64);
+          base_image=base64;
+          // Here, you can use the 'base64' variable to send the image data to your server
+        };
+        reader.onerror = function (error) {
+          console.log('Error: ', error);
+        };
+      }
+      buttonELem.addEventListener("click", () => {
+        GetData({url:"https://mzfarnholh.execute-api.ap-south-1.amazonaws.com/v1/",data:{
+          "Image":base_image
+        }});
+      });
+
+      const GetData = async ({url,data}) => {
+        console.log(data);
+        const response = await fetch(url, {
+          method: "POST",
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify(data),
+        });
+        const json = await response.json();
+        console.log(json);
+      };
+    </script>
+
+</body>
+</html>
