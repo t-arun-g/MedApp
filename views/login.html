@@ -159,7 +159,7 @@ $("#checklogin").on("submit",function(event){
      
       else if(message=='Success'){
         id=response.id;
-        document.getElementById('checklogin').action = 'doctor/'+id;
+        document.getElementById('checklogin').action = 'doctors/'+id;
         event.currentTarget.submit();
       }
 

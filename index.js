@@ -31,11 +31,13 @@ app.use('/doctors/:doctor_id/appointments',appointment);
 app.use('/doctors/:doctor_id/canvas',canvas);
 app.use('/doctors/:doctor_id/add_patients',add_new);
 
-app.get('/login/doctor/:doc_id/',(req,res,next)=>{
+app.get('/login/doctors/:doc_id/',(req,res,next)=>{
     let doc_id=req.params.doc_id;
-    res.redirect('/doctor/'+doc_id);
+    res.redirect('/doctors/'+doc_id);
 })
-app.use('/doctor',doctorpage);
+
+
+app.use('/doctors',doctorpage);
 
 app.listen(process.env.port || 3000,()=>{
     console.log('Web Server is listening at port '+ (process.env.port || 3000));

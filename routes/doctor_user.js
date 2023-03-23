@@ -33,6 +33,12 @@ router.get('/:doc_id',(req,res,next)=>{
     res.sendFile(path.join(__dirname,'../views/index1.html'));
 })
 
+router.get('/:doc_id/completed',(req,res,next)=>{
+    console.log("entered completed patients");
+    res.sendFile(path.join(__dirname,'../views/completed_p.html'));
+
+})
+
 router.get('/getdata/:doc_id',(req,res,next)=>{
     console.log(req.params.doc_id);
     let doc_name;

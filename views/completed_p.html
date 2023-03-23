@@ -53,7 +53,7 @@
                     </a>
                 </li>
                 <li class="nav-item background-better ms-4 mt-3 " style=" margin-top: 2.8rem;">
-                    <a class="nav-link" href="#" style="color:#828282;">
+                    <a class="nav-link" href="#" style="color:#828282;" id="appointments">
                         <span  class="fa fa-heart-circle-plus ml-3 mt-2" style="color: #ffffff; width:1.78625 rem;float: left;">
                         <span class="mt-3 ml-4" style="font-family:'Inter'; color: rgb(255, 255, 255);font-weight: 100;">Appointments</span>
             
@@ -175,7 +175,7 @@
 
 <ul class="nav-tabs nav mt-4 mb-3 ml-5" style="border-bottom: none;">
     <li class="nav-item" >
-        <a class="nav-link " aria-current="page" href="active_patients.html" style="font-weight: 500; color: #5b5b5b;font-size: larger;">Active Patients</a>
+        <a class="nav-link " aria-current="page" id="active" href="" style="font-weight: 500; color: #5b5b5b;font-size: larger;">Active Patients</a>
       </li>
       <li class="nav-item acive">
         <a class="nav-link" href="#" style="border-bottom: solid #18CDCA; font-weight: 500; border-left: none; border-top: none;border-right: none; color: #0B5B5A; font-size: larger;background-color: rgba(217, 251, 254, 0.283);">Completed</a>
@@ -208,6 +208,22 @@
 
     
 </div>
+<script language="JavaScript" type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+
+
+<script>
+      var url = $(location).attr('href'),
+        parts = url.split("/"),
+        doctorid = parts[parts.length-2];
+       // alert(doctorid);
+        $("#appointments").attr("href","/doctors/"+doctorid+"/appointments")
+        $("#completed").attr("href","/doctors/"+doctorid+"/completed") ;
+        $("#active").attr("href","/doctors/"+doctorid)
+  
+                  </script>              
     
 </body>
+
+
+
 </html>

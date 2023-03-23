@@ -199,7 +199,7 @@ $(document).ready(function() {
         doctorid = parts[parts.length-3];
         href="/doctors/"+doctorid+"/appointments";
         $("#appointed").attr("href",href+"/appointed");
-        $("#index1").attr("href","doctor/"+doctorid)
+        $("#index1").attr("href","doctors/"+doctorid)
         
         $.get("/doctors/"+doctorid+"/appointments/getdata")
             .done(function(response){

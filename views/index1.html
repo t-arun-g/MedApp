@@ -158,7 +158,7 @@
         <a class="nav-link active" aria-current="page" href="#" style="border-bottom: solid #18CDCA; font-weight: 500; border-left: none; border-top: none;border-right: none; color: #0B5B5A; font-size: larger;background-color: rgba(217, 251, 254, 0.283);">Active Patients</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="completed_p.html" style="font-weight: 500; color: #5b5b5b;font-size: larger;">Completed</a>
+        <a class="nav-link" href="" id="completed" style="font-weight: 500; color: #5b5b5b;font-size: larger;">Completed</a>
       </li>
 </ul>
 
@@ -287,10 +287,12 @@
       var url = $(location).attr('href'),
         parts = url.split("/"),
         doctorid = parts[parts.length-1];
-        $.get('/doctor/getdata/'+doctorid)
-                .done(function(response){
-                  $("#appointments").attr("href","/doctors/"+doctorid+"/appointments")
-                  
+        
+        $("#appointments").attr("href","/doctors/"+doctorid+"/appointments")
+        $("#completed").attr("href","/doctors/"+doctorid+"/completed") ; 
+        $.get('/doctors/getdata/'+doctorid)
+                .done(function(response){    
+                 // alert($('#completed').attr('href'));            
                   $("#doctor_name").text(response.Name);
                   let number=response.number;
                   let i=0,j=0;
@@ -324,6 +326,7 @@
 
 
          });
+
 
 </script>
 
